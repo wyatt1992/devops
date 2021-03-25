@@ -1,0 +1,14 @@
+apiVersion: settings.k8s.io/v1alpha1
+kind: PodPreset
+metadata:
+  name: demo-podpreset
+spec:
+  selector:
+    matchLabels:
+      role: developer
+  volumeMounts:
+    - mountPath: /cache
+      name: cache-volume
+  volumes:
+    - name: cache-volume
+      emptyDir: {}
