@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+spec:
+  nodeSelector:
+    gpu: nvida
+  containers:
+    - name: demo-pod-container
+      image: nginx
+      imagePullPolicy: Always
+      lifecycle:
+        postStart:
+          exec:
+            command:
+              ["/bin/sh", "-c", "echo Hello PostStart > /usr/share/message"]
+        preStop:
+          exec:
+            command: ["/usr/sbin/nginx", "-s", "quit"]
