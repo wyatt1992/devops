@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: demo-job
+spec:
+  parallelism: 3
+  completions: 10
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: resouer/ubuntu-bc
+        command: ["sh", "-c", "echo 'scale=100; 4*a(1)' | bc -l "]
+      restartPolicy: Never
+  backoffLimit: 4
+  activeDeadlineSeconds: 300
