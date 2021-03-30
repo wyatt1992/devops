@@ -1,0 +1,7 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-svc-externalname
+spec:
+  type: ExternalName
+  externalName: demo-svc-externalname.wyatt.plus

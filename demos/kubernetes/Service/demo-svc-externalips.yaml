@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-svc-externalips
+spec:
+  selector:
+    app: demo-svc-externalips
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  externalIPs:
+  - 192.11.11.11

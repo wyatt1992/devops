@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-svc-loadbalancer
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: demo-svc-loadbalancer
+  type: LoadBalancer
