@@ -16,6 +16,7 @@ jobs:
           image: wy1140174371/flask_web
           registry: hub.docker.com
           tags: v1, latest
+          dockerfile: demos/docker/flask_web/Dockerfile
           directory: demos/docker/flask_web
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
