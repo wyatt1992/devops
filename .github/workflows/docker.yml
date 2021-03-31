@@ -14,7 +14,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: wy1140174371/flask_web
-          registry: hub.docker.com
+          registry: docker.io
           tags: v1, latest
           dockerfile: demos/docker/flask_web/Dockerfile
           directory: demos/docker/flask_web
